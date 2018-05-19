@@ -1,13 +1,10 @@
-#include "array.h"
+#include "monomial.h"
 
 int main()
 {
-	Array arr;
-
-	arr.read();
-	arr.print();
-
-	std::cout << arr.find(3) << std::endl;
-	arr.free();
+	Monomial t1;
+	t1.read();
+	t1.print();
+	t1.derive().print();
 	return 0;
 }

@@ -11,7 +11,14 @@ void Monomial::read()
 
 void Monomial::print()
 {
-	std::cout << "(" << _coeff << "X)^" << _exp << std::endl;
+	if (_exp == 0)
+		std::cout << _coeff << std::endl;
+	else if (_exp == 1)
+		std::cout << _coeff << "x" << std::endl;
+	else if (_coeff == 0)
+		std::cout << 0 << std::endl;
+	else
+		std::cout << _coeff << "x^" << _exp << std::endl;
 }
 
 long Monomial::calc(int x)
@@ -22,8 +29,10 @@ long Monomial::calc(int x)
 Monomial Monomial::derive()
 {
 	Monomial res;
+
 	res._coeff = _coeff * _exp;
 	res._exp = _exp - 1;
+
     return res;
 }
 
